@@ -7,6 +7,14 @@
     <groupId>by.belapb</groupId>
     <artifactId>ATM_system</artifactId>
     <version>1.0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <name>Software tool for telemetry ATM system automates the collection service WEB</name>
 
 </project>

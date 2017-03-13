@@ -1,0 +1,5 @@
+<root>
+    <item name='junit.framework'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
