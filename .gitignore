@@ -20,7 +20,7 @@ out
 *.war
 *.ear
 
-#все равно под контролем
+#все равно под контролемЛ
 out-test/
 
 # virtual machine crash logs
