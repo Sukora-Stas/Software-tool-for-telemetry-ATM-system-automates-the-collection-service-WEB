@@ -1,0 +1,28 @@
+tmp
+.classpath
+.project
+.idea
+*.iml
+.checkstyle
+build
+target
+bin
+.settings
+out
+/build
+/target/
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files
+*.war
+*.ear
+
+#все равно под контролем
+out-test/
+
+# virtual machine crash logs
+hs_err_pid*
+
