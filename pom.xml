@@ -44,6 +44,7 @@
 
 
     <build>
+        <finalName>Software tool for telemetry ATM system automates the collection service WEB</finalName>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -54,10 +55,8 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <url>http://localhost/manager</url>
+                    <url>http://localhost/manager/text</url>
                     <server>tomcat-8.5</server>
-                    <username>manager-script</username>
-                    <password>qwerty</password>
                     <path>/${project.build.finalName}</path>
                     <warFile>target/${project.build.finalName}.war</warFile>
                     <update>true</update>
