@@ -1,4 +1,4 @@
-package by.belapb;
+package by.belapb.util;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
@@ -22,7 +22,7 @@ public class MySQLConnect {
             Driver driver = new FabricMySQLDriver();
             DriverManager.registerDriver(driver);
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:2016/it_academy",
+                    "jdbc:mysql://127.0.0.1:2016/test",
                     "root","");
         } catch (SQLException ex) {
             Logger.getLogger(MySQLConnect.class.getName()).log(Level.SEVERE,
