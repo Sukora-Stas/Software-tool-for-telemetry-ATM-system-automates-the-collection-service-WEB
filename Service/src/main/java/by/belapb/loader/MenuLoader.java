@@ -46,6 +46,11 @@ public class MenuLoader {
                 case 4:
                     inf = findINF();
                     break;
+                case 5:
+                    insert.Insert(pathATM, 1);
+                    insert.Insert(pathINF, 2);
+                    System.exit(0);
+                    break;
             }
             needMenu = true;
         }
@@ -60,6 +65,8 @@ public class MenuLoader {
         System.out.println();
         System.out.println("        3. auto insert INF");
         System.out.println("        4. find INF");
+        System.out.println();
+        System.out.println("        5.FULL INSERT and stop application");
     }
 
 

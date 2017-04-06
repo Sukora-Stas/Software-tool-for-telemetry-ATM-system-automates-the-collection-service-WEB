@@ -14,35 +14,25 @@ public class INF implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column
-//            (name = "БИК")
+    @Column(name = "БИК")
     private Integer BIK;
-    @Column
-//            (name = "наименование_подразделения")
+    @Column(name = "наименование_подразделения")
     private String Names_of_divisions;
-    @Column
-//            (name = "регион")
+    @Column(name = "регион")
     private String Region;
-    @Column
-//            (name = "населённый_пункт")
+    @Column(name = "населённый_пункт")
     private String Locality;
-    @Column
-//            (name = "адрес_установки")
+    @Column(name = "адрес_установки")
     private String Addres;
-    @Column
-//            (name = "место_установки")
+    @Column(name = "место_установки")
     private String Position;
-    @Column
-//            (name = "время_работы")
+    @Column(name = "время_работы")
     private String WorkingTime;
-    @Column
-//            (name = "Cash_in")
+    @Column(name = "Cash_in")
     private Boolean Cash_in;
-    @Column
-//            (name = "Terminal_ID")
+    @Column(name = "Terminal_ID")
     private String Terminal_ID;
-    @Column
-//            (name = "координаты")
+    @Column(name = "координаты")
     private String Coordinats;
 
     public INF() {

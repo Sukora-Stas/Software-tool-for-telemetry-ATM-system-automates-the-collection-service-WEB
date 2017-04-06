@@ -41,7 +41,6 @@ public class AutoInsert {
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 if (i % 20 == 0) {
                     session.clear();
-
                 }
                 row = (Row) sheet.getRow(i);
 
