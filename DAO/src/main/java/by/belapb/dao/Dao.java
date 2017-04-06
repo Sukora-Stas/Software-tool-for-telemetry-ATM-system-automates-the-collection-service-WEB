@@ -1,6 +1,6 @@
-package by.belapb.DAO;
+package by.belapb.dao;
 
-import by.academy.it.db.exceptions.DaoException;
+import by.belapb.dao.exceptions.DaoException;
 
 import java.io.Serializable;
 

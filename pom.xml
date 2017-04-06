@@ -104,7 +104,7 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <url>http://localhost/manager/text</url>
+                    <url>http://localhost:8017/manager/text</url>
                     <server>tomcat-8.5</server>
                     <path>/${project.build.finalName}</path>
                     <warFile>target/${project.build.finalName}.war</warFile>

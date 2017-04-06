@@ -8,13 +8,9 @@
  * Use, disclosure, or reproduction is prohibited
  * without prior written approval from VeriFone, Inc.
  */
-package by.belapb.DAO.exceptions;
+package by.belapb.dao.exceptions;
 
-/**
- * User: yslabko
- * Date: 14.04.14
- * Time: 15:00
- */
+
 public class DaoException extends Exception {
 
     private Exception exception;

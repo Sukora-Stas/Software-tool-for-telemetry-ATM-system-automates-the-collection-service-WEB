@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<h2>Hello World! TEST</h2>
+<h2>Hello World! TEST hibernate</h2>
 <p>Здарова</p>
 </body>
 </html>

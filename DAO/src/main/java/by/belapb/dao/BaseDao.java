@@ -1,20 +1,23 @@
-package by.belapb.DAO;
+package by.belapb.dao;
 
 
-import by.academy.it.db.exceptions.DaoException;
-import by.academy.it.loader.PersonLoader;
+import by.belapb.dao.exceptions.DaoException;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+
+import by.belapb.util.HibernateUtil;
 
 
 public class BaseDao<T> implements Dao<T> {
     private static Logger log = Logger.getLogger(BaseDao.class);
     private Transaction transaction = null;
+    public static HibernateUtil util = null;
 
 
     public BaseDao() {
@@ -23,7 +26,7 @@ public class BaseDao<T> implements Dao<T> {
 
     public void saveOrUpdate(T t) throws DaoException {
         try {
-            Session session = PersonLoader.util.getSession();
+            Session session = util.getSession();
             transaction = session.beginTransaction();
             session.saveOrUpdate(t);
             log.info("saveOrUpdate(t):" + t);
@@ -41,7 +44,7 @@ public class BaseDao<T> implements Dao<T> {
         log.info("Get class by id:" + id);
         T t = null;
         try {
-            Session session = PersonLoader.util.getSession();
+            Session session = util.getSession();
             transaction = session.beginTransaction();
             t = (T) session.get(getPersistentClass(), id);
             transaction.commit();
@@ -58,7 +61,7 @@ public class BaseDao<T> implements Dao<T> {
         log.info("Load class by id:" + id);
         T t = null;
         try {
-            Session session = PersonLoader.util.getSession();
+            Session session = util.getSession();
             transaction = session.beginTransaction();
             t = (T) session.load(getPersistentClass(), id);
             log.info("load() clazz:" + t);
@@ -74,7 +77,7 @@ public class BaseDao<T> implements Dao<T> {
 
     public void delete(T t) throws DaoException {
         try {
-            Session session = PersonLoader.util.getSession();
+            Session session = util.getSession();
             transaction = session.beginTransaction();
             session.delete(t);
             transaction.commit();

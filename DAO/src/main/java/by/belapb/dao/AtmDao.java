@@ -1,6 +1,6 @@
-package by.belapb.DAO;
+package by.belapb.dao;
 
-import by.academy.it.pojos.ATM;
+import by.belapb.pojos.ATM;
 import org.apache.log4j.Logger;
 
 /**

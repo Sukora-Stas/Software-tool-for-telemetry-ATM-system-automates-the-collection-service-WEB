@@ -1,6 +1,8 @@
 package by.belapb.insert;
 
 
+import by.belapb.pojos.ATM;
+import by.belapb.pojos.INF;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -10,6 +12,7 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import static by.belapb.loader.MenuLoader.*;
 
 
 /**
