@@ -3,11 +3,13 @@ package by.belapb.insert;
 
 import by.belapb.pojos.ATM;
 import by.belapb.pojos.INF;
+import by.belapb.util.HibernateUtil;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.hibernate.Session;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -20,11 +22,13 @@ import static by.belapb.loader.MenuLoader.*;
  */
 public class AutoInsert {
 
+    public static HibernateUtil util = null;
 
     public void Insert(String path, int number) throws Exception {
         ATM atm = null;
         INF inf = null;
         Boolean valuta = null;
+
         try {
             FileInputStream input = new FileInputStream(path);
             POIFSFileSystem fs = new POIFSFileSystem(input);
@@ -32,7 +36,13 @@ public class AutoInsert {
             workbook = WorkbookFactory.create(fs);
             Sheet sheet = workbook.getSheetAt(0);
             Row row;
+            util = HibernateUtil.getHibernateUtil();
+            Session session = util.getSession();
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                if (i % 20 == 0) {
+                    session.clear();
+
+                }
                 row = (Row) sheet.getRow(i);
 
                 String bik = row.getCell(0).getStringCellValue();
@@ -63,7 +73,7 @@ public class AutoInsert {
 
                     atm = null;
                     atm = createATM(atm, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
-                    getAtmDao().saveOrUpdate(atm);
+                    getAtmDao().saveOrUpdate(atm, session);
                 }
                 if (2 == number) {
                     if ("да".equals(s)) {
@@ -73,7 +83,7 @@ public class AutoInsert {
                     }
                     inf = null;
                     inf = createINF(inf, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
-                    getInfDao().saveOrUpdate(inf);
+                    getInfDao().saveOrUpdate(inf, session);
                 }
 
                 System.out.println("Import rows " + i);

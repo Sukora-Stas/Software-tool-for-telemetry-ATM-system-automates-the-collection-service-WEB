@@ -25,11 +25,8 @@ public class BaseDao<T> implements Dao<T> {
 
     }
 
-    public void saveOrUpdate(T t) throws DaoException {
+    public void saveOrUpdate(T t, Session session) throws DaoException {
         try {
-            util = HibernateUtil.getHibernateUtil();
-            Session session = util.getSession();
-
             transaction = session.beginTransaction();
             session.saveOrUpdate(t);
             log.info("saveOrUpdate(t):" + t);
