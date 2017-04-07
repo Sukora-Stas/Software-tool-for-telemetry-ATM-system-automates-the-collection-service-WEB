@@ -28,69 +28,69 @@ public class AutoInsert {
         ATM atm = null;
         INF inf = null;
         Boolean valuta = null;
-
-        try {
-            FileInputStream input = new FileInputStream(path);
-            POIFSFileSystem fs = new POIFSFileSystem(input);
-            Workbook workbook;
-            workbook = WorkbookFactory.create(fs);
-            Sheet sheet = workbook.getSheetAt(0);
-            Row row;
-            util = HibernateUtil.getHibernateUtil();
-            Session session = util.getSession();
-            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+        util = HibernateUtil.getHibernateUtil();
+        Session session = util.getSession();
+            try {
+                FileInputStream input = new FileInputStream(path);
+                POIFSFileSystem fs = new POIFSFileSystem(input);
+                Workbook workbook;
+                workbook = WorkbookFactory.create(fs);
+                Sheet sheet = workbook.getSheetAt(0);
+                Row row;
+                for (int i = 1; i <= sheet.getLastRowNum(); i++) {
                 if (i % 20 == 0) {
+                    session.flush();
                     session.clear();
                 }
-                row = (Row) sheet.getRow(i);
+                    row = (Row) sheet.getRow(i);
 
-                String bik = row.getCell(0).getStringCellValue();
+                    String bik = row.getCell(0).getStringCellValue();
 
-                String namesofdivisions = row.getCell(1).getStringCellValue();
+                    String namesofdivisions = row.getCell(1).getStringCellValue();
 
-                String reg = row.getCell(2).getStringCellValue();
+                    String reg = row.getCell(2).getStringCellValue();
 
-                String loc = row.getCell(3).getStringCellValue();
+                    String loc = row.getCell(3).getStringCellValue();
 
-                String addr = row.getCell(4).getStringCellValue();
+                    String addr = row.getCell(4).getStringCellValue();
 
-                String pos = row.getCell(5).getStringCellValue();
+                    String pos = row.getCell(5).getStringCellValue();
 
-                String workanme = row.getCell(6).getStringCellValue();
+                    String workanme = row.getCell(6).getStringCellValue();
 
-                String s = row.getCell(7).getStringCellValue();
+                    String s = row.getCell(7).getStringCellValue();
 
-                String terminal = row.getCell(8).getStringCellValue();
+                    String terminal = row.getCell(8).getStringCellValue();
 
-                String coord = row.getCell(9).getStringCellValue();
-                if (1 == number) {
-                    if ("1".equals(s)) {
-                        valuta = true;
-                    } else if ("0".equals(s)) {
-                        valuta = false;
+                    String coord = row.getCell(9).getStringCellValue();
+                    if (1 == number) {
+                        if ("1".equals(s)) {
+                            valuta = true;
+                        } else if ("0".equals(s)) {
+                            valuta = false;
+                        }
+
+                        atm = null;
+                        atm = createATM(atm, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
+                        getAtmDao().saveOrUpdate(atm, session);
+                    }
+                    if (2 == number) {
+                        if ("да".equals(s)) {
+                            valuta = true;
+                        } else if ("нет".equals(s)) {
+                            valuta = false;
+                        }
+                        inf = null;
+                        inf = createINF(inf, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
+                        getInfDao().saveOrUpdate(inf, session);
                     }
 
-                    atm = null;
-                    atm = createATM(atm, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
-                    getAtmDao().saveOrUpdate(atm, session);
+                    System.out.println("Import rows " + i);
                 }
-                if (2 == number) {
-                    if ("да".equals(s)) {
-                        valuta = true;
-                    } else if ("нет".equals(s)) {
-                        valuta = false;
-                    }
-                    inf = null;
-                    inf = createINF(inf, bik, namesofdivisions, reg, loc, addr, pos, workanme, valuta, terminal, coord);
-                    getInfDao().saveOrUpdate(inf, session);
-                }
+                System.out.println("Success import excel to mysql table");
 
-                System.out.println("Import rows " + i);
+            } catch (IOException e) {
             }
-            System.out.println("Success import excel to mysql table");
-
-        } catch (IOException e) {
-        }
 
     }
 
