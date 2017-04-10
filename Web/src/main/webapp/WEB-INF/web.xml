@@ -28,9 +28,9 @@
   <!--</filter-mapping>-->
 
 
-  <error-page>
-    <location>/jsp/EROR404/eror404.jsp</location>
-  </error-page>
+  <!--<error-page>-->
+    <!--<location>/jsp/EROR404/eror404.jsp</location>-->
+  <!--</error-page>-->
 
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>

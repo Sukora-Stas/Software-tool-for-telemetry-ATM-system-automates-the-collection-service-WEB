@@ -1,3 +1,5 @@
+<%@ page import="by.belapb.dao.IAtmDao" %>
+<%@ page import="by.belapb.pojos.ATM" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -21,6 +23,7 @@
     <p>${operationMessage}</p>
     <input type="submit" value="Enter" />
     <a href="controller?command=gotoregistration">Registration</a>
+
 </form>
 </body>
 </html>
