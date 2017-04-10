@@ -10,7 +10,8 @@ import java.io.Serializable;
 @Entity
 @Table
 public class ATM implements Serializable {
-    private static final long serialVersionUID = 3L;
+    private static final long serialVersionUID = 3492031745944185680L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

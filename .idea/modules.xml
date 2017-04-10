@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ATM_system.iml" filepath="$PROJECT_DIR$/ATM_system.iml" />
       <module fileurl="file://$PROJECT_DIR$/DAO/DAO.iml" filepath="$PROJECT_DIR$/DAO/DAO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Entity/Entity.iml" filepath="$PROJECT_DIR$/Entity/Entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/Service/Service.iml" filepath="$PROJECT_DIR$/Service/Service.iml" />
       <module fileurl="file://$PROJECT_DIR$/Web/Web.iml" filepath="$PROJECT_DIR$/Web/Web.iml" />
     </modules>

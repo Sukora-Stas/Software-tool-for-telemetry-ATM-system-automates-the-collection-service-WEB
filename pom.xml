@@ -7,12 +7,13 @@
     <artifactId>ATM_system</artifactId>
     <version>1.0.0.4</version>
     <packaging>pom</packaging>
-    <name>Software tool for telemetry ATM system automates the collection service WEB</name>
+    <name>Software tool for telemetry ATM system automates the collection service</name>
     <url>http://maven.apache.org</url>
     <modules>
         <module>DAO</module>
         <module>Service</module>
         <module>Web</module>
+        <module>Entity</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -10,6 +10,7 @@ public class AtmDao extends BaseDao<ATM> {
 
     private static Logger log = Logger.getLogger(AtmDao.class);
 
-
+//    AtmDao INSTANCE_PRODUCT= new ProductDAOImpl();
+//    List<ATM> getProducts();
 
 }
