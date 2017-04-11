@@ -15,6 +15,8 @@ public class PersonLoader {
         Locale.setDefault(Locale.US);
         util = HibernateUtil.getHibernateUtil();
 
+
+
         System.out.println("Start Menu");
         menu();
     }

@@ -37,11 +37,11 @@ public class User implements Serializable {
     @Column(name = "Дата_Регистрации")
     private Timestamp Data;
 
-    @ManyToOne(fetch = FetchType.LAZY,optional=true)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "id_Role", nullable = false)
     private Role role;
 
-    public User(){
+    public User() {
 
     }
 

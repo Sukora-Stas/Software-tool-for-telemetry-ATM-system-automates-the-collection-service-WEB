@@ -11,7 +11,7 @@
         <property name="hibernate.dialect">by.belapb.util.CustomMySQLDialect</property>
         <property name="hibernate.connection.pool_size">10</property>
         <property name="show_sql">true</property>
-        <property name="hibernate.hbm2ddl.auto">validate</property>          <!-- validate-->
+        <property name="hibernate.hbm2ddl.auto">update</property>          <!-- validate-->
 
 
         <mapping class="by.belapb.pojos.ATM"/>

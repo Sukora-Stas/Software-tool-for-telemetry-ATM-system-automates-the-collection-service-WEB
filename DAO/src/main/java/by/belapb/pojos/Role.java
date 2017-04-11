@@ -9,9 +9,8 @@ import java.util.Set;
  */
 @Entity
 @Table
-public class Role implements Serializable{
-    private static final long serialVersionUID = -3526130452465478582L;
-
+public class Role implements Serializable {
+    private static final long serialVersionUID = 5180299890978568347L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -19,10 +18,10 @@ public class Role implements Serializable{
     @Column(name = "Уровень_доступа")
     private String Value;
 
-    @OneToMany(mappedBy = "role",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
     private Set<User> id_User;
 
-    public Role(){
+    public Role() {
 
     }
 
