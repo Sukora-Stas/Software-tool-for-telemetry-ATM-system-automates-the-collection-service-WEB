@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by Sukora Stas.
  */
+
 public interface IAtmDao {
 
     IAtmDao INSTANCE_PRODUCT= new AtmDAOImpl();

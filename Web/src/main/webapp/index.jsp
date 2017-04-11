@@ -1,47 +1,50 @@
 <%@ page import="by.belapb.dao.IAtmDao" %>
 <%@ page import="by.belapb.pojos.ATM" %>
+<%@ page import="by.belapb.dao.AtmDAOImpl" %>
+<%@ page import="by.belapb.loader.MenuLoader" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <title>$Title$</title>
   </head>
   <body>
-  <%--<jsp:forward page="jsp/login.jsp"/>--%>
+  <jsp:forward page="jsp/login/login.jsp"/>
   <h1>FIRST</h1>
 
-  <table>
+  <%--<table>--%>
 
-    <h3>Категории</h3>
 
 
     <%--<tbody>--%>
     <%--<tr>--%>
       <%--<th>Категория</th>--%>
-      <%--//INSTANCE_PRODUCT что это такое ?--%>
-      <%--//В ProductDAO описана  такая переменная, отвечает за создание ProductDAOImpl--%>
-      <%--//Ну у нас все будет по-другому, можете особо не запоминать это.--%>
-      <%--//ProductDAO INSTANCE_PRODUCT= new ProductDAOImpl();--%>
-      <%--<% for (ATM product : IAtmDao.INSTANCE_PRODUCT.getProducts()) {%>--%>
-      <%--&lt;%&ndash;<td><a href="<%=product.getActionForServlet()%>"><%=product.getId()%></a></td>&ndash;%&gt;--%>
-      <%----%>
-      <%----%>
-      <%--<%}%>--%>
+
+      <%--&lt;%&ndash;<% for (ATM product : MenuLoader) {%>&ndash;%&gt;--%>
+      <%--&lt;%&ndash;&lt;%&ndash;<td><a href="<%=product.getActionForServlet()%>"><%=product.getId()%></a></td>&ndash;%&gt;&ndash;%&gt;--%>
+      <%--&lt;%&ndash;&ndash;%&gt;--%>
+      <%--&lt;%&ndash;&ndash;%&gt;--%>
+      <%--&lt;%&ndash;<%}%>&ndash;%&gt;--%>
+      <%--<%ATM atm=MenuLoader.findATM(200);%>--%>
+      <%--<b><%atm.getRegion();%></b>--%>
     <%--</tr>--%>
 
 
-    <%--<tr>--%>
-      <%--<th>BIK</th>--%>
-      <% for (ATM product : IAtmDao.INSTANCE_PRODUCT.getProducts()) {%>
+    <%--&lt;%&ndash;<tr>&ndash;%&gt;--%>
+      <%--&lt;%&ndash;<th>BIK</th>&ndash;%&gt;--%>
+      <%--&lt;%&ndash;<% for (ATM atm : IAtmDao.INSTANCE_PRODUCT.getProducts()) {%>&ndash;%&gt;--%>
 
 
-         <b> <%=product.getBIK()%></b>
+         <%--&lt;%&ndash;<b> <%=atm.getBIK()%></b>&ndash;%&gt;--%>
 
-      <%}%>
-    <%--</tr>--%>
+      <%--&lt;%&ndash;<%}%>&ndash;%&gt;--%>
+    <%--&lt;%&ndash;</tr>&ndash;%&gt;--%>
 
 
     <%--</tbody>--%>
 
-  </table>
+  <%--</table>--%>
+
+
+
   </body>
 </html>

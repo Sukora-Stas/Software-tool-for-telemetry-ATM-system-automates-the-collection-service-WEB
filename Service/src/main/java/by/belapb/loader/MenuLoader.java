@@ -169,6 +169,21 @@ public class MenuLoader {
         return atm;
     }
 
+    public static ATM findATM(Integer id) {
+        ATM atm = new ATM();
+
+        try {
+            atm = getAtmDao().get(id);
+        } catch (DaoException e) {
+
+            log.error(e, e);
+        } catch (NullPointerException e) {
+            log.error("Unable find person:", e);
+        }
+        System.out.print(atm);
+        return atm;
+    }
+
     public static INF findINF() {
         System.out.println("Get by Id. Please enter user id:");
         System.out.print("Id - ");

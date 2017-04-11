@@ -10,6 +10,9 @@
           <element id="archive" name="DAO-1.0-SNAPSHOT.jar">
             <element id="module-output" name="DAO" />
           </element>
+          <element id="archive" name="Service-1.0.1.0.jar">
+            <element id="module-output" name="Service" />
+          </element>
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.5.6" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.5.6" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:4.3.11.Final" />
