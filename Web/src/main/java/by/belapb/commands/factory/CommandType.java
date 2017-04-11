@@ -1,14 +1,8 @@
 package by.belapb.commands.factory;
 
-
 import by.belapb.commands.BaseCommand;
 import by.belapb.commands.impl.DefaultCommand;
 
-/**
- * Description: contains all commands
- *
- * @author Artiom Saidanov.
- */
 public enum CommandType {
 
     //user commands
