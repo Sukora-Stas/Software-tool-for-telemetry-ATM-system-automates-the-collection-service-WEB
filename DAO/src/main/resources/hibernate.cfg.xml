@@ -16,6 +16,8 @@
 
         <mapping class="by.belapb.pojos.ATM"/>
         <mapping class="by.belapb.pojos.INF"/>
+        <mapping class="by.belapb.pojos.User"/>
+        <mapping class="by.belapb.pojos.Role"/>
     </session-factory>
 </hibernate-configuration>
 
