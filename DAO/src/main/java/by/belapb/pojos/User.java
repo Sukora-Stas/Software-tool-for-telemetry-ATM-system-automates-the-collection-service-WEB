@@ -19,10 +19,10 @@ public class User implements Serializable {
 //    @Column(name = "id_Role")
 //    private Integer id_role;
 
-    @Column(name = "Логин")
+    @Column(name = "login")
     private String Login;
 
-    @Column(name = "Пароль")
+    @Column(name = "password")
     private String Password;
 
     @Column(name = "Фамилия")
