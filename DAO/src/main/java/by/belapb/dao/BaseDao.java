@@ -40,6 +40,21 @@ public class BaseDao<T> implements Dao<T> {
 
     }
 
+    public void save(T t) throws DaoException {
+        try {
+            Session session = util.getSession();
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(t);
+            log.info("saveOrUpdate(t):" + t);
+            transaction.commit();
+            log.info("Save or update (commit):" + t);
+        } catch (HibernateException e) {
+            log.error("Error save or update " + t + " in Dao" + e);
+            transaction.rollback();
+            throw new DaoException(e);
+        }
+    }
+
     public T get(Serializable id) throws DaoException {
         log.info("Get class by id:" + id);
         T t = null;

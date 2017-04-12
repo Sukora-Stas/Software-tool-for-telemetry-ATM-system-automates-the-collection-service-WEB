@@ -20,7 +20,6 @@ public class MenuLoader {
     private static String pathATM = "C:\\Users\\stasi\\Downloads\\www_ATM.xls";
     private static String pathINF = "C:\\Users\\stasi\\Downloads\\www_INF.xls";
 
-    public static String sql = null;
 
     public static void menu() throws Exception {
         ATM atm = null;
