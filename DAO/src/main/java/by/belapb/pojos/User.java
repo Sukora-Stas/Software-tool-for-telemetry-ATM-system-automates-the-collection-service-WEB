@@ -3,6 +3,8 @@ package by.belapb.pojos;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Sukora Stas.
@@ -54,6 +56,7 @@ public class User implements Serializable {
         Data = data;
         this.role = role;
     }
+
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -166,4 +169,77 @@ public class User implements Serializable {
                 ", role=" + role +
                 '}';
     }
+
+
+//    public static UserBuilder builder() {
+//        return new UserBuilder();
+//    }
+//
+//    public static class UserBuilder {
+//        private Integer id;
+//        private String firstName;
+//        private String lastName;
+//        private String login;
+//        private String password;
+//        private Integer accessLevel;
+//        private Account account;
+//        private Set<Lot> lots = new HashSet<>();
+//
+//        UserBuilder() {
+//        }
+//
+//        public User.UserBuilder id(Integer id) {
+//            this.id = id;
+//            return this;
+//        }
+//
+//        public User.UserBuilder firstName(String firstName) {
+//            this.firstName = firstName;
+//            return this;
+//        }
+//
+//        public User.UserBuilder lastName(String lastName) {
+//            this.lastName = lastName;
+//            return this;
+//        }
+//
+//        public User.UserBuilder login(String login) {
+//            this.login = login;
+//            return this;
+//        }
+//
+//        public User.UserBuilder password(String password) {
+//            this.password = password;
+//            return this;
+//        }
+//
+//        public User.UserBuilder accessLevel(Integer accessLevel) {
+//            this.accessLevel = accessLevel;
+//            return this;
+//        }
+//
+//        public User.UserBuilder account(Account account) {
+//            this.account = account;
+//            return this;
+//        }
+//
+//        public User.UserBuilder lots(Set<Lot> lots){
+//            if (lots != null){
+//                this.lots = lots;
+//            }else {
+//                this.lots = new HashSet<>();
+//            }
+//            return this;
+//        }
+//
+//        public User build() {
+//            return new User(id, firstName, lastName, login, password, accessLevel, account, lots);
+//        }
+//
+//        public String toString() {
+//            return "by.saidanov.auction.entities.User.UserBuilder(id=" + this.id + ", firstName=" + this.firstName + ", lastName=" + this.lastName + ", login=" + this.login + ", password=" + this.password + ", accessLevel=" + this.accessLevel + ", account=" + this.account + ")";
+//        }
+//    }
+
+
 }

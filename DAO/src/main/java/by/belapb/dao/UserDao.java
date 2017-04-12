@@ -4,9 +4,14 @@ import by.belapb.dao.exceptions.DaoException;
 import by.belapb.pojos.Role;
 import by.belapb.pojos.User;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Sukora Stas.
@@ -26,6 +31,8 @@ public class UserDao extends BaseDao<User> {
         }
         return instance;
     }
+
+
 
     @Override
     public void save(User user) throws DaoException {

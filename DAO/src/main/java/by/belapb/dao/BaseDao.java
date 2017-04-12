@@ -2,7 +2,9 @@ package by.belapb.dao;
 
 
 import by.belapb.dao.exceptions.DaoException;
+import by.belapb.pojos.User;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -10,6 +12,8 @@ import org.hibernate.Transaction;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
+import java.util.List;
 
 import by.belapb.util.HibernateUtil;
 
@@ -102,6 +106,17 @@ public class BaseDao<T> implements Dao<T> {
             transaction.rollback();
             throw new DaoException(e);
         }
+    }
+
+    @Override
+    public List<T> getAll() throws DaoException {
+        Session session = util.getSession();
+        Criteria criteria = session.createCriteria(T.class);
+        List result = criteria.list();
+        List<User> allLots = new ArrayList<>();
+        allLots.addAll(result);
+//        return allLots;
+        return null;
     }
 
     private Class getPersistentClass() {

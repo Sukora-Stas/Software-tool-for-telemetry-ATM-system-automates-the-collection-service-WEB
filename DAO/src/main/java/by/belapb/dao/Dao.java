@@ -4,6 +4,7 @@ import by.belapb.dao.exceptions.DaoException;
 import org.hibernate.Session;
 
 import java.io.Serializable;
+import java.util.List;
 
 interface Dao<T> {
     void saveOrUpdate(T t, Session session) throws DaoException;
@@ -15,5 +16,7 @@ interface Dao<T> {
     T load(Serializable id) throws DaoException;
 
     void delete(T t) throws DaoException;
+
+    List<T> getAll() throws DaoException;
 }
 

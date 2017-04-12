@@ -14,7 +14,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ATM_system" target="1.5" />
-      <module name="DAO" target="1.5" />
+      <module name="DAO" target="1.7" />
       <module name="Entity" target="1.5" />
       <module name="n" target="1.5" />
       <module name="Service" target="1.5" />
