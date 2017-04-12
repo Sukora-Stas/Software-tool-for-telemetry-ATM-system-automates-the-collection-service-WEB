@@ -17,7 +17,7 @@ import by.belapb.util.HibernateUtil;
 public class BaseDao<T> implements Dao<T> {
     private static Logger log = Logger.getLogger(BaseDao.class);
     private Transaction transaction = null;
-    public static HibernateUtil util = null;
+    public static HibernateUtil util = HibernateUtil.getHibernateUtil();
 
 
     //TODO create saveOrUpdate to 1 criter
@@ -42,6 +42,7 @@ public class BaseDao<T> implements Dao<T> {
 
     public void save(T t) throws DaoException {
         try {
+//            util=HibernateUtil.getHibernateUtil();
             Session session = util.getSession();
             transaction = session.beginTransaction();
             session.saveOrUpdate(t);

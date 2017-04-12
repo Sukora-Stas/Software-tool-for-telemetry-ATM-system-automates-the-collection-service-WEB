@@ -9,6 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -16,8 +17,7 @@ import java.util.Set;
  */
 public class RoleDao extends BaseDao<Role> {
     private static Logger log = Logger.getLogger(RoleDao.class);
-    private Transaction transaction = null;
-    public static HibernateUtil util = null;
+
 
     private volatile static RoleDao instance;
 
@@ -49,4 +49,8 @@ public class RoleDao extends BaseDao<Role> {
         return role;
     }
 
+    @Override
+    public Role get(Serializable id) throws DaoException {
+        return super.get(id);
+    }
 }

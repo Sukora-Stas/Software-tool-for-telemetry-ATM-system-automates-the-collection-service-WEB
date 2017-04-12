@@ -1,6 +1,7 @@
 package by.belapb.loader;
 
 import by.belapb.dao.RoleDao;
+import by.belapb.dao.UserDao;
 import by.belapb.pojos.Role;
 import by.belapb.pojos.User;
 import by.belapb.util.HibernateUtil;
@@ -21,64 +22,33 @@ public class PersonLoader {
 
         Locale.setDefault(Locale.US);
 
+        User user = null;
+        Role role = null;
+
         Timestamp date = new Timestamp(Calendar.getInstance().getTimeInMillis());
 
 
-        Role role = null;
+//        рабочий вариант добавления роли
 
-        role = RoleDao.createRole(role, "admin", null);
-
-        RoleDao.getInstance().save(role);
-
-        System.out.println(role);
+//        role = RoleDao.createRole(role, "admin", null);
+//        RoleDao.getInstance().save(role);
 
 
+        role = RoleDao.getInstance().get(2);
+        user = UserDao.createUser(user,
+                "test",
+                "test",
+                "Sukora",
+                "Stanislav",
+                "Igorevich", date, role);
+        UserDao.getInstance().save(user);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        User user = new User("test",
-//                "test",
-//                "Sukora",
-//                "Stanislav",
-//                "Igorevich", date, role);
-
-//        Role role = new Role("user", null);
 //        User user = new User("user",
 //                "user",
 //                "user",
 //                "user",
 //                "user", date, role);
-
-        System.out.println(role);
-
-//        System.out.println(user);
 
 
 //        Session session = util.getSession();
