@@ -20,7 +20,7 @@ public class BaseDao<T> implements Dao<T> {
     public static HibernateUtil util = null;
 
 
-
+    //TODO create saveOrUpdate to 1 criter
     public BaseDao() {
 
     }

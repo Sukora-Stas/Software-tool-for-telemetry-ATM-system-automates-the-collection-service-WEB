@@ -25,8 +25,19 @@ public class PersonLoader {
         Timestamp date = new Timestamp(Calendar.getInstance().getTimeInMillis());
 
 
-        Role role = new Role("admin", null);
-        User user = new User("test", "test", "Sukora", "Stanislav", "Igorevich", date, role);
+//        Role role = new Role("admin", null);
+//        User user = new User("test",
+//                "test",
+//                "Sukora",
+//                "Stanislav",
+//                "Igorevich", date, role);
+
+        Role role = new Role("user", null);
+        User user = new User("user",
+                "user",
+                "user",
+                "user",
+                "user", date, role);
 
         System.out.println(role);
         System.out.println(user);
