@@ -29,14 +29,15 @@ public class PersonLoader {
 
 
 //        рабочий вариант добавления роли
-        role = RoleDao.createRole(role, "user", null);
-        RoleDao.getInstance().save(role);
+//        role = RoleDao.createRole(role, "user", null);
+//        RoleDao.getInstance().save(role);
 
-        role = RoleDao.createRole(role, "admin", null);
-        RoleDao.getInstance().save(role);
+//        role = RoleDao.createRole(role, "admin", null);
+//        RoleDao.getInstance().save(role);
 
 
         role = RoleDao.getInstance().get(1);
+
         user = UserDao.createUser(user,
                 "test1",
                 "test1",
@@ -45,23 +46,23 @@ public class PersonLoader {
                 "Tarasova", date, role);
         UserDao.getInstance().save(user);
 
-        role = RoleDao.getInstance().get(2);
-        user = UserDao.createUser(user,
-                "test",
-                "test",
-                "Sukora",
-                "Stanislav",
-                "Igorevich", date, role);
-        UserDao.getInstance().save(user);
-
-        role = RoleDao.getInstance().get(1);
-        user = UserDao.createUser(user,
-                "test1",
-                "test1",
-                "Sukora",
-                "Alena",
-                "Tarasova", date, role);
-        UserDao.getInstance().save(user);
+//        role = RoleDao.getInstance().get(2);
+//        user = UserDao.createUser(user,
+//                "test",
+//                "test",
+//                "Sukora",
+//                "Stanislav",
+//                "Igorevich", date, role);
+//        UserDao.getInstance().save(user);
+//
+//        role = RoleDao.getInstance().get(1);
+//        user = UserDao.createUser(user,
+//                "test1",
+//                "test1",
+//                "Sukora",
+//                "Alena",
+//                "Tarasova", date, role);
+//        UserDao.getInstance().save(user);
 
 
         System.out.println("Start Menu");

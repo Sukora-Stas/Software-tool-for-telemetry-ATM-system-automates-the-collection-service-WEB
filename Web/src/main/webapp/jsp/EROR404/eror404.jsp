@@ -755,6 +755,7 @@
 </head>
 <body>
 <div class="push">
+    ${errorDatabase}
     <p>404 Not Found</p>
     <hr>
     <p>Developers are compile to this page. Soon it will be ready. Accept our apologies.</p>
