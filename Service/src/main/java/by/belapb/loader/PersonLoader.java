@@ -29,10 +29,21 @@ public class PersonLoader {
 
 
 //        рабочий вариант добавления роли
+        role = RoleDao.createRole(role, "user", null);
+        RoleDao.getInstance().save(role);
 
-//        role = RoleDao.createRole(role, "admin", null);
-//        RoleDao.getInstance().save(role);
+        role = RoleDao.createRole(role, "admin", null);
+        RoleDao.getInstance().save(role);
 
+
+        role = RoleDao.getInstance().get(1);
+        user = UserDao.createUser(user,
+                "test1",
+                "test1",
+                "Sukora",
+                "Alena",
+                "Tarasova", date, role);
+        UserDao.getInstance().save(user);
 
         role = RoleDao.getInstance().get(2);
         user = UserDao.createUser(user,
@@ -43,19 +54,15 @@ public class PersonLoader {
                 "Igorevich", date, role);
         UserDao.getInstance().save(user);
 
+        role = RoleDao.getInstance().get(1);
+        user = UserDao.createUser(user,
+                "test1",
+                "test1",
+                "Sukora",
+                "Alena",
+                "Tarasova", date, role);
+        UserDao.getInstance().save(user);
 
-//        User user = new User("user",
-//                "user",
-//                "user",
-//                "user",
-//                "user", date, role);
-
-
-//        Session session = util.getSession();
-//
-//
-//        session.saveOrUpdate(role);
-//        session.saveOrUpdate(user);
 
         System.out.println("Start Menu");
         menu();

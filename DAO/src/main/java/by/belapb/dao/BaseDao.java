@@ -42,7 +42,6 @@ public class BaseDao<T> implements Dao<T> {
 
     public void save(T t) throws DaoException {
         try {
-//            util=HibernateUtil.getHibernateUtil();
             Session session = util.getSession();
             transaction = session.beginTransaction();
             session.saveOrUpdate(t);
