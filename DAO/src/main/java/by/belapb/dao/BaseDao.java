@@ -111,12 +111,12 @@ public class BaseDao<T> implements Dao<T> {
     @Override
     public List<T> getAll() throws DaoException {
         Session session = util.getSession();
-        Criteria criteria = session.createCriteria(T.class);
+        Criteria criteria = session.createCriteria(getPersistentClass());
         List result = criteria.list();
-        List<User> allLots = new ArrayList<>();
+        List<T> allLots = new ArrayList<>();
         allLots.addAll(result);
-//        return allLots;
-        return null;
+        return allLots;
+//        return null;
     }
 
     private Class getPersistentClass() {

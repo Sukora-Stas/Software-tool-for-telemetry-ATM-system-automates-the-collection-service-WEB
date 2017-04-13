@@ -8,6 +8,7 @@ import by.belapb.util.HibernateUtil;
 import org.hibernate.Session;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -54,6 +55,10 @@ public class PersonLoader {
 //                "Stanislav",
 //                "Igorevich", date, role);
 //        UserDao.getInstance().save(user);
+
+        ArrayList ua = (ArrayList) UserDao.getInstance().getAll();
+
+        System.out.println(ua + "\n");
 //
 //        role = RoleDao.getInstance().get(1);
 //        user = UserDao.createUser(user,

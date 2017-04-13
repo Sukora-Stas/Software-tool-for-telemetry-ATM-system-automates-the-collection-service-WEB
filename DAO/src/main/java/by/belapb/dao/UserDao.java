@@ -32,7 +32,10 @@ public class UserDao extends BaseDao<User> {
         return instance;
     }
 
-
+    @Override
+    public List<User> getAll() throws DaoException {
+        return super.getAll();
+    }
 
     @Override
     public void save(User user) throws DaoException {

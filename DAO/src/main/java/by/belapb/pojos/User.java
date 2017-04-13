@@ -166,7 +166,6 @@ public class User implements Serializable {
                 ", FirstName='" + FirstName + '\'' +
                 ", MiddleName='" + MiddleName + '\'' +
                 ", Data=" + Data +
-                ", role=" + role +
                 '}';
     }
 
