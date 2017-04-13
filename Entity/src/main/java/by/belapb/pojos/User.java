@@ -164,9 +164,9 @@ public class User implements Serializable {
                 ", FirstName='" + FirstName + '\'' +
                 ", MiddleName='" + MiddleName + '\'' +
                 ", Data=" + Data +
+//                ", role=" + role +
                 '}';
     }
-
 
 //    public static UserBuilder builder() {
 //        return new UserBuilder();

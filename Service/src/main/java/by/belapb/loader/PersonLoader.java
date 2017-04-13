@@ -6,11 +6,10 @@ import by.belapb.pojos.Role;
 import by.belapb.pojos.User;
 import by.belapb.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.mapping.Collection;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
+import java.util.*;
 
 
 import static by.belapb.loader.MenuLoader.menu;
@@ -56,9 +55,15 @@ public class PersonLoader {
 //                "Igorevich", date, role);
 //        UserDao.getInstance().save(user);
 
-        ArrayList ua = (ArrayList) UserDao.getInstance().getAll();
+        List ua = UserDao.getInstance().getAll();;
+//TODO: realization sort
+        for (int i = 0; i < ua.size(); i++) {
+            System.out.println(ua.get(i) + "\n");
 
-        System.out.println(ua + "\n");
+
+        }
+
+
 //
 //        role = RoleDao.getInstance().get(1);
 //        user = UserDao.createUser(user,
