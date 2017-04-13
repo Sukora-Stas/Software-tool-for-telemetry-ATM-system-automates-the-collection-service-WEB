@@ -3,8 +3,6 @@ package by.belapb.pojos;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Sukora Stas.

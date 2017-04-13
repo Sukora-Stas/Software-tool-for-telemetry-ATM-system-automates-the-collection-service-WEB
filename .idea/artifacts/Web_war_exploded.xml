@@ -10,6 +10,9 @@
           <element id="archive" name="DAO-1.0-SNAPSHOT.jar">
             <element id="module-output" name="DAO" />
           </element>
+          <element id="archive" name="Entity-1.0.0.4.jar">
+            <element id="module-output" name="Entity" />
+          </element>
           <element id="archive" name="Service-1.0.1.0.jar">
             <element id="module-output" name="Service" />
           </element>
