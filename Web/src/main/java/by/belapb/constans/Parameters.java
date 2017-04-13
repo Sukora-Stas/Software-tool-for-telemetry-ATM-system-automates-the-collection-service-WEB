@@ -14,7 +14,7 @@ public class Parameters {
     public static final String USER_PASSWORD = "password";
     public static final String USER_FIRST_NAME = "firstName";
     public static final String USER_LAST_NAME = "lastName";
-    public static final String USER_ACCESS_LEVEL = "accessLevel";
+    public static final String USER_ACCESS_LEVEL = "value";
     public static final String USER = "user";
 
     /* Lot parameters */

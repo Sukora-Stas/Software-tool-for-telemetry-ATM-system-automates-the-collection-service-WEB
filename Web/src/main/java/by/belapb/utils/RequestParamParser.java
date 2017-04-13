@@ -7,6 +7,8 @@ import by.belapb.pojos.User;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.List;
+
 import static by.belapb.constans.Parameters.*;
 
 /**
@@ -23,7 +25,7 @@ public class RequestParamParser {
     }
 
 //    public static User getUser(HttpServletRequest request) throws DaoException {
-////        User user = UserDao.getInstance().getAll();
+//        List<User> user = UserDao.getInstance().getAll();
 //
 //
 ////        User user = User.builder().build();

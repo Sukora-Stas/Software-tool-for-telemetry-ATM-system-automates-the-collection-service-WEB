@@ -20,7 +20,7 @@ public class PersonLoader {
         Locale.setDefault(Locale.US);
 
         User user = null;
-        Role role = null;
+//        Role role = null;
 
         Timestamp date = new Timestamp(Calendar.getInstance().getTimeInMillis());
 
@@ -53,20 +53,27 @@ public class PersonLoader {
 //        UserDao.getInstance().save(user);
 
 
-
 //        sort
         Comparator<User> comparator = (u1, u2) -> u1.getId() - u2.getId();
 
         List<User> ua = UserDao.getInstance().getAll();
-
+        List<Role> rolee = RoleDao.getInstance().getAll();
         ua.sort(comparator);
+        System.out.println(rolee);
+
+//        getAll
 //        for (int i = 0; i < ua.size(); i++) {
 //            System.out.println(ua.get(i) + "\n");
 //        }
 
+//TODO: end this facking code
+        for(Role role : rolee){
+            System.out.println(role.getId_User());
+        }
 
         for (User user1 : ua) {
-            System.out.println(user1.getLogin());
+            System.out.println(user1.getLogin() );
+//            + role.getId_User()
         }
 
 

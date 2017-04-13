@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -52,5 +53,10 @@ public class RoleDao extends BaseDao<Role> {
     @Override
     public Role get(Serializable id) throws DaoException {
         return super.get(id);
+    }
+
+    @Override
+    public List<Role> getAll() throws DaoException {
+        return super.getAll();
     }
 }
