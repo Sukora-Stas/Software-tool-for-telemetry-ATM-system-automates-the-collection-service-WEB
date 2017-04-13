@@ -4,9 +4,6 @@ import by.belapb.dao.RoleDao;
 import by.belapb.dao.UserDao;
 import by.belapb.pojos.Role;
 import by.belapb.pojos.User;
-import by.belapb.util.HibernateUtil;
-import org.hibernate.Session;
-import org.hibernate.mapping.Collection;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -36,15 +33,15 @@ public class PersonLoader {
 //        RoleDao.getInstance().save(role);
 
 
-        role = RoleDao.getInstance().get(1);
-
-        user = UserDao.createUser(user,
-                "test1",
-                "test1",
-                "Sukora",
-                "Alena",
-                "Tarasova", date, role);
-        UserDao.getInstance().save(user);
+//        role = RoleDao.getInstance().get(1);
+//
+//        user = UserDao.createUser(user,
+//                "test1",
+//                "test1",
+//                "Sukora",
+//                "Alena",
+//                "Tarasova", date, role);
+//        UserDao.getInstance().save(user);
 
 //        role = RoleDao.getInstance().get(2);
 //        user = UserDao.createUser(user,
@@ -55,24 +52,22 @@ public class PersonLoader {
 //                "Igorevich", date, role);
 //        UserDao.getInstance().save(user);
 
-        List ua = UserDao.getInstance().getAll();;
-//TODO: realization sort
-        for (int i = 0; i < ua.size(); i++) {
-            System.out.println(ua.get(i) + "\n");
 
 
+//        sort
+        Comparator<User> comparator = (u1, u2) -> u1.getId() - u2.getId();
+
+        List<User> ua = UserDao.getInstance().getAll();
+
+        ua.sort(comparator);
+//        for (int i = 0; i < ua.size(); i++) {
+//            System.out.println(ua.get(i) + "\n");
+//        }
+
+
+        for (User user1 : ua) {
+            System.out.println(user1.getLogin());
         }
-
-
-//
-//        role = RoleDao.getInstance().get(1);
-//        user = UserDao.createUser(user,
-//                "test1",
-//                "test1",
-//                "Sukora",
-//                "Alena",
-//                "Tarasova", date, role);
-//        UserDao.getInstance().save(user);
 
 
         System.out.println("Start Menu");
