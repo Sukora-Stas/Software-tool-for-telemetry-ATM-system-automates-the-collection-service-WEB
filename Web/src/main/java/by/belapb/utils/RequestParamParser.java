@@ -24,41 +24,20 @@ public class RequestParamParser {
         return commandType;
     }
 
-//    public static User getUser(HttpServletRequest request) throws DaoException {
-//        List<User> user = UserDao.getInstance().getAll();
-//
-//
-////        User user = User.builder().build();
-//        int id = 0;
-//        if (request.getParameter(USER_ID) != null) {
-//            id = Integer.parseInt(request.getParameter(USER_ID));
-//        }
-//        int accessLevel = 0;
-//        if (request.getParameter(USER_ACCESS_LEVEL) != null) {
-//            accessLevel = Integer.parseInt(request.getParameter(USER_ACCESS_LEVEL));
-//        }
-//        String firstName = request.getParameter(USER_FIRST_NAME);
-//        String lastName = request.getParameter(USER_LAST_NAME);
-//        String login = request.getParameter(USER_LOGIN);
-//        String password = request.getParameter(USER_PASSWORD);
-//        if (firstName != null & lastName != null & login != null & password != null) {
-//            user = User.builder()
-//                    .login(login)
-//                    .password(password)
-//                    .firstName(firstName)
-//                    .lastName(lastName)
-//                    .accessLevel(accessLevel)
-//                    .id(id)
-//                    .build();
-//            return user;
-//        } else if (login != null & password != null) {
-//            user = User.builder()
-//                    .login(login)
-//                    .password(password)
-//                    .build();
-//            return user;
-//        }
-//        return user;
-//    }
+    public static User getUser(HttpServletRequest request) throws DaoException {
+        List<User> user = UserDao.getInstance().getAll();
+
+        int id = 0;
+        if (request.getParameter(USER_ID) != null) {
+            id = Integer.parseInt(request.getParameter(USER_ID));
+        }
+        String firstName = request.getParameter(USER_FIRST_NAME);
+        String lastName = request.getParameter(USER_LAST_NAME);
+        String middleName = request.getParameter(USER_MIDDLE_NAME);
+        String login = request.getParameter(USER_LOGIN);
+        String password = request.getParameter(USER_PASSWORD);
+
+        return null;
+    }
 
 }

@@ -2,6 +2,8 @@ package by.belapb.commands.factory;
 
 
 import by.belapb.commands.BaseCommand;
+import by.belapb.commands.impl.DefaultCommand;
+import by.belapb.utils.RequestParamParser;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,12 +35,12 @@ public class CommandFactory {
      */
     public BaseCommand defineCommand(HttpServletRequest request) {
         BaseCommand current = null;
-//        try {
-//            CommandType type = RequestParamParser.getCommandType(request);
-//            current = type.getCurrentCommand();
-//        } catch (IllegalArgumentException e) {
-//            current = new DefaultCommand();
-//        }
+        try {
+            CommandType type = RequestParamParser.getCommandType(request);
+            current = type.getCurrentCommand();
+        } catch (IllegalArgumentException e) {
+            current = new DefaultCommand();
+        }
         return current;
     }
 }

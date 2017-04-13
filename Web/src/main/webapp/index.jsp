@@ -1,7 +1,3 @@
-<%@ page import="by.belapb.dao.IAtmDao" %>
-<%@ page import="by.belapb.pojos.ATM" %>
-<%@ page import="by.belapb.dao.AtmDAOImpl" %>
-<%@ page import="by.belapb.loader.MenuLoader" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
