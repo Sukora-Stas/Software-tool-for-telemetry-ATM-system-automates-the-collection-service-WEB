@@ -66,6 +66,7 @@
     </style>
 </head>
 <body>
+<%--<b style="font-size: 200em">XYU</b>--%>
 <form class="login" method="post" action="controller">
     <label for="login">Логин</label>
     <input type="text" id="login" name="login" value="" size="20"/>

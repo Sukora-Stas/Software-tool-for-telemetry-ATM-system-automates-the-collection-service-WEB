@@ -30,6 +30,6 @@ public class RequestHandler {
         } else {
             page = ConfigurationManager.getInstance().getProperty(PagePath.INDEX_PAGE_PATH);
             response.sendRedirect(request.getContextPath() + page);
-        }
+    }
     }
 }

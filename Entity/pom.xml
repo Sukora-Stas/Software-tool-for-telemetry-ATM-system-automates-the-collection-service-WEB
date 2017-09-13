@@ -7,6 +7,7 @@
         <groupId>by.belapb</groupId>
         <version>1.0.0.4</version>
     </parent>
+    <groupId>by.belapb</groupId>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Entity</artifactId>
